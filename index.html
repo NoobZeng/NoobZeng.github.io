@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录界面</title>
+	<style type="text/css">
+		div{
+			margin: 150px;
+			border: 1px solid red;
+			width: 200px;
+		}
+		input{
+			margin: 10px;
+		}
+	</style>
+	<script type="text/javascript">
+		function onlogin(){
+			var account = document.getElementById("account").value;
+			var pwd = document.getElementById("pwd").value;
+			if(/^\s*$/.test(account) || /^\s*$/.test(pwd)){
+				alert("账号和密码不能为空");
+				return false;
+			}
+			if(pwd.length != 6){
+				alert("密码必须是六位数");
+				return false;
+			}
+			if(pwd.match(/\d/) && pwd.match(/[a-zA-z]/)){
+				return true;
+			}else{
+				alert("密码必须由数字和字母组成");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<div>
+			<label>登录</label>
+			<form method="post" onsubmit="onlogin();">
+				<input type="text" name="account" id = "account"><br>
+				<input type="password" name="pwd" id = "pwd"><br>
+				<input type="submit" name="login">
+				<input type="reset" name="cancel">
+			</form>
+		</div>
+	</center>
+</body>
+</html>
