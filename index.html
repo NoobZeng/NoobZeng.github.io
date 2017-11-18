@@ -2,49 +2,83 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>登录界面</title>
+	<title>个人主页</title>
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
 	<style type="text/css">
-		div{
-			margin: 150px;
-			border: 1px solid red;
-			width: 200px;
+		body{
+			background-image:url(images/beijing.png);
 		}
-		input{
-			margin: 10px;
+		.logo{
+			width: 347px;
+			height: 96px;
+			position: relative;
+			left: 330px;
+			top: 10px;
+			background-image: url(images/noobzeng.png);
+			cursor: pointer;
+		}
+
+		#box{
+			width: 750px;
+			height: 70px;
+			position: relative;
+			overflow: hidden;
+			left: 150px;
+			top: 70px;
+		}
+
+		.biaoqian_1,.biaoqian_2,.biaoqian_3,.biaoqian_4{
+			width: 200px;
+			height: 135px;
+			background-size: 100% 100%;
+			background-image: url(images/biaoqian.png);
+			position: absolute;
+			cursor: pointer;
+		}
+
+		.biaoqian_1{
+			top: -50px;
+			left: -10px;
+		}
+
+		.biaoqian_2{
+			top: -50px;
+			left: 180px;
+		}
+
+		 .biaoqian_3{
+			top: -50px;
+			left: 370px;
+		}
+
+		.biaoqian_4{
+			top: -50px;
+			left: 560px;
+		}
+
+		.biaoqian_1:hover,.biaoqian_2:hover,.biaoqian_3:hover,.biaoqian_4:hover{
+			width: 210px;
+			height: 145px;
+			background-size: 100% 100%;
+			background-image: url(images/biaoqian.png);
+			position: absolute;
+			cursor: pointer;
 		}
 	</style>
+	<!-- <script type="text/javascript" src="scripts/script.js"></script> -->
 	<script type="text/javascript">
-		function onlogin(){
-			var account = document.getElementById("account").value;
-			var pwd = document.getElementById("pwd").value;
-			if(/^\s*$/.test(account) || /^\s*$/.test(pwd)){
-				alert("账号和密码不能为空");
-				return false;
-			}
-			if(pwd.length != 6){
-				alert("密码必须是六位数");
-				return false;
-			}
-			if(pwd.match(/\d/) && pwd.match(/[a-zA-z]/)){
-				return true;
-			}else{
-				alert("密码必须由数字和字母组成");
-				return false;
-			}
-		}
+		window.onload = function(){
+			
+		};
 	</script>
 </head>
 <body>
-	<center>
-		<div>
-			<label>登录</label>
-			<form method="post" onsubmit="onlogin();">
-				<input type="text" name="account" id = "account"><br>
-				<input type="password" name="pwd" id = "pwd"><br>
-				<input type="submit" name="login">
-				<input type="reset" name="cancel">
-			</form>
-		</div>
-	</center>
+	<div class="logo"></div>
+	<div id="box">
+		<div class="biaoqian_1"></div>
+		<div class="biaoqian_2"></div>
+		<div class="biaoqian_3"></div>
+		<div class="biaoqian_4"></div>
+	</div>
 </body>
 </html>
